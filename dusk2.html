@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#06253b">
+
+<title>For Dusk ✦ Happy Birthday</title>
+
+<style>
+
+/* =========================================================
+   BASE
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    margin:0;
+    overflow:hidden;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    color:#effcff;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            #168db4 0%,
+            #075879 28%,
+            #062a46 58%,
+            #031321 100%
+        );
+}
+
+button,input{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.hidden{
+    display:none!important;
+}
+
+
+/* =========================================================
+   AMBIENT BACKGROUND
+========================================================= */
+
+#ambient{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+/* large soft Mualani-like aqua lights */
+
+.aquaGlow{
+    position:absolute;
+    width:45vw;
+    height:45vw;
+    max-width:650px;
+    max-height:650px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(65,229,238,.20),
+            rgba(21,170,194,.08) 40%,
+            transparent 70%
+        );
+
+    filter:blur(12px);
+
+    animation:
+        glowMove 9s ease-in-out infinite alternate;
+}
+
+.glowOne{
+    left:-15%;
+    top:-20%;
+}
+
+.glowTwo{
+    right:-15%;
+    bottom:-20%;
+    animation-delay:3s;
+}
+
+@keyframes glowMove{
+
+    from{
+        transform:scale(.9) translate(0,0);
+    }
+
+    to{
+        transform:scale(1.15) translate(25px,-15px);
+    }
+}
+
+
+/* =========================================================
+   WATER WAVES
+========================================================= */
+
+.wave{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:55vw;
+    height:55vw;
+
+    max-width:700px;
+    max-height:700px;
+
+    border:1px solid rgba(117,238,255,.12);
+
+    border-radius:50%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.7);
+
+    animation:
+        wavePulse 8s ease-in-out infinite;
+}
+
+.wave:nth-child(2){
+    animation-delay:2s;
+    width:42vw;
+    height:42vw;
+}
+
+.wave:nth-child(3){
+    animation-delay:4s;
+    width:28vw;
+    height:28vw;
+}
+
+@keyframes wavePulse{
+
+    0%,100%{
+        opacity:.15;
+        transform:
+            translate(-50%,-50%)
+            scale(.7)
+            rotate(0deg);
+    }
+
+    50%{
+        opacity:.5;
+        transform:
+            translate(-50%,-50%)
+            scale(1)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================================================
+   FLOATING WATER DROPS
+========================================================= */
+
+.waterDrop{
+    position:absolute;
+
+    width:5px;
+    height:9px;
+
+    border-radius:
+        70% 30% 70% 30%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7ffff,
+            #4ee7f0
+        );
+
+    box-shadow:
+        0 0 8px #6cf1ff,
+        0 0 18px rgba(59,226,242,.6);
+
+    animation:
+        dropFloat linear infinite;
+}
+
+@keyframes dropFloat{
+
+    from{
+        transform:
+            translateY(110vh)
+            rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    to{
+        transform:
+            translateY(-20vh)
+            rotate(220deg);
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   KINICH PIXELS
+========================================================= */
+
+.pixel{
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    background:#a9ff62;
+
+    box-shadow:
+        9px 0 #5edc65,
+        0 9px #d9ff72;
+
+    opacity:.5;
+
+    animation:
+        pixelMove 5s ease-in-out infinite;
+}
+
+.pixel.p1{
+    top:20%;
+    right:8%;
+}
+
+.pixel.p2{
+    bottom:23%;
+    left:8%;
+    animation-delay:2s;
+}
+
+.pixel.p3{
+    top:67%;
+    right:15%;
+    animation-delay:1s;
+}
+
+@keyframes pixelMove{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50%{
+        transform:
+            translateY(-18px)
+            rotate(90deg);
+    }
+}
+
+
+/* =========================================================
+   SKIRK CRYSTALS
+========================================================= */
+
+.skirk{
+    position:absolute;
+
+    width:7px;
+    height:16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ead5ff,
+            #9959df
+        );
+
+    clip-path:
+        polygon(
+            50% 0,
+            100% 32%,
+            70% 100%,
+            30% 100%,
+            0 32%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 7px #bd79ff
+        );
+
+    opacity:.5;
+
+    animation:
+        skirkFloat 4s ease-in-out infinite;
+}
+
+.skirk.s1{
+    top:28%;
+    left:6%;
+}
+
+.skirk.s2{
+    top:48%;
+    right:6%;
+    animation-delay:1.5s;
+}
+
+.skirk.s3{
+    bottom:18%;
+    left:13%;
+    animation-delay:3s;
+}
+
+@keyframes skirkFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(-10deg);
+    }
+
+    50%{
+        transform:
+            translateY(-15px)
+            rotate(15deg);
+    }
+}
+
+
+/* =========================================================
+   CLICK RIPPLES
+========================================================= */
+
+.ripple{
+    position:fixed;
+
+    width:20px;
+    height:20px;
+
+    border:
+        1px solid
+        rgba(130,245,255,.9);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:99999;
+
+    animation:
+        ripple .9s ease-out forwards;
+}
+
+.ripple::after{
+    content:"";
+
+    position:absolute;
+
+    inset:6px;
+
+    border:
+        1px solid
+        rgba(218,255,255,.8);
+
+    border-radius:50%;
+}
+
+@keyframes ripple{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            scale(.2);
+
+        opacity:1;
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            scale(7);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   STAR BURST
+========================================================= */
+
+.star{
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:100000;
+
+    color:#e7ffff;
+
+    text-shadow:
+        0 0 8px #52efff,
+        0 0 20px #45bce9;
+
+    animation:
+        starBurst 1.2s ease-out forwards;
+}
+
+@keyframes starBurst{
+
+    from{
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.2)
+            rotate(0deg);
+    }
+
+    to{
+        opacity:0;
+
+        transform:
+            translate(
+                calc(-50% + var(--dx)),
+                calc(-50% + var(--dy))
+            )
+            scale(1.6)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================================================
+   LOCK SCREEN
+========================================================= */
+
+#lockScreen{
+    position:fixed;
+
+    inset:0;
+
+    z-index:100000;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #0c6685,
+            #052c46 48%,
+            #020d17 100%
+        );
+
+    transition:
+        opacity .9s ease,
+        visibility .9s ease;
+}
+
+.lockCard{
+
+    width:min(88vw,410px);
+
+    padding:34px 28px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(113,238,255,.5);
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8,56,78,.92),
+            rgba(2,18,31,.94)
+        );
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.65),
+        0 0 45px rgba(55,224,244,.18);
+}
+
+.lockSymbol{
+
+    font-size:46px;
+
+    animation:
+        lockFloat 2.5s ease-in-out infinite;
+
+    text-shadow:
+        0 0 15px #58ecff,
+        0 0 35px rgba(65,218,241,.6);
+}
+
+@keyframes lockFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50%{
+        transform:
+            translateY(-7px)
+            rotate(8deg);
+    }
+}
+
+.lockCard h1{
+
+    margin:
+        10px 0 8px;
+
+    font-size:22px;
+
+    letter-spacing:2px;
+}
+
+.lockCard p{
+
+    color:#a8d9e8;
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+#password{
+
+    width:100%;
+
+    padding:14px;
+
+    border:
+        1px solid
+        #347d98;
+
+    border-radius:13px;
+
+    background:#02121e;
+
+    color:white;
+
+    outline:none;
+
+    text-align:center;
+
+    letter-spacing:8px;
+
+    font-size:18px;
+}
+
+#password:focus{
+
+    border-color:#6ceeff;
+
+    box-shadow:
+        0 0 20px
+        rgba(70,220,242,.2);
+}
+
+#unlockButton{
+
+    width:100%;
+
+    margin-top:13px;
+
+    padding:14px;
+
+    border:0;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7cf5f1,
+            #25bdd4,
+            #0c78ae
+        );
+
+    color:#02121b;
+
+    font-weight:900;
+
+    box-shadow:
+        0 8px 30px
+        rgba(48,213,235,.28);
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+#unlockButton:hover{
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(48,224,245,.45);
+}
+
+#error{
+
+    min-height:20px;
+
+    margin-top:9px;
+
+    color:#ff9cae;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+#app{
+
+    width:100%;
+    height:100%;
+
+    position:relative;
+}
+
+
+/* =========================================================
+   TOP BUTTONS
+========================================================= */
+
+#infoButton,
+#musicButton{
+
+    position:fixed;
+
+    top:18px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(113,236,255,.45);
+
+    background:
+        rgba(3,25,40,.82);
+
+    color:#e8ffff;
+
+    z-index:5000;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.25);
+
+    backdrop-filter:blur(8px);
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+#infoButton{
+    left:18px;
+}
+
+#musicButton{
+    right:18px;
+}
+
+#infoButton:hover,
+#musicButton:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 0 22px
+        rgba(73,224,242,.4);
+}
+
+#musicLabel{
+
+    position:fixed;
+
+    top:33px;
+
+    right:73px;
+
+    color:#82eaf2;
+
+    font-size:9px;
+
+    letter-spacing:1.5px;
+
+    z-index:5000;
+}
+
+
+/* =========================================================
+   INFO PANEL
+========================================================= */
+
+#infoPanel{
+
+    display:none;
+
+    position:fixed;
+
+    left:18px;
+    top:73px;
+
+    width:min(88vw,330px);
+
+    padding:20px;
+
+    border:
+        1px solid
+        rgba(111,230,248,.4);
+
+    border-radius:18px;
+
+    background:
+        rgba(2,18,29,.96);
+
+    box-shadow:
+        0 20px 70px
+        rgba(0,0,0,.65);
+
+    z-index:5001;
+}
+
+#infoPanel.show{
+    display:block;
+}
+
+#infoPanel h3{
+
+    margin:
+        0 0 12px;
+
+    color:#a9f5f7;
+}
+
+#infoPanel p{
+
+    margin:8px 0;
+
+    color:#9bc6d4;
+
+    font-size:12px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   MAIN ENVELOPE SCENE
+========================================================= */
+
+#mainScene{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+}
+
+#envelopeSection{
+
+    text-align:center;
+
+    position:relative;
+}
+
+.kicker{
+
+    margin-bottom:18px;
+
+    color:#6df2ef;
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    animation:
+        kickerGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes kickerGlow{
+
+    0%,100%{
+        opacity:.75;
+
+        text-shadow:
+            0 0 0 transparent;
+    }
+
+    50%{
+        opacity:1;
+
+        text-shadow:
+            0 0 15px
+            rgba(74,239,238,.7);
+    }
+}
+
+#envelopeTitle{
+
+    margin:
+        0 0 9px;
+
+    font-size:26px;
+
+    color:#efffff;
+
+    text-shadow:
+        0 0 18px
+        rgba(89,235,240,.35);
+}
+
+#envelopeSubtitle{
+
+    margin:
+        0 0 25px;
+
+    color:#a8dbe3;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope{
+
+    position:relative;
+
+    width:min(84vw,440px);
+
+    height:min(55vw,280px);
+
+    min-height:195px;
+
+    cursor:pointer;
+
+    filter:
+        drop-shadow(
+            0 25px 40px
+            rgba(0,0,0,.55)
+        );
+
+    animation:
+        envelopeFloat 4s ease-in-out infinite;
+}
+
+@keyframes envelopeFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
+.envelopeGlow{
+
+    position:absolute;
+
+    inset:-35px;
+
+    border-radius:35px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(60,229,235,.28),
+            transparent 68%
+        );
+
+    animation:
+        envelopeGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes envelopeGlow{
+
+    0%,100%{
+        transform:scale(1);
+        opacity:.7;
+    }
+
+    50%{
+        transform:scale(1.08);
+        opacity:.35;
+    }
+}
+
+.envelopeBody{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        #4bc8d1;
+
+    border-radius:
+        0 0 18px 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0a758b,
+            #073447 72%
+        );
+
+    box-shadow:
+        inset 0 0 45px
+        rgba(100,255,250,.09);
+}
+
+.envelopeBody::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-12%;
+    bottom:0;
+
+    width:75%;
+    height:100%;
+
+    border-top:
+        1px solid
+        rgba(170,255,255,.3);
+
+    transform:
+        skewY(31deg);
+}
+
+.envelopeBody::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-12%;
+    bottom:0;
+
+    width:75%;
+    height:100%;
+
+    border-top:
+        1px solid
+        rgba(170,255,255,.3);
+
+    transform:
+        skewY(-31deg);
+}
+
+.flap{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:0;
+    height:0;
+
+    border-left:
+        calc(min(84vw,440px) / 2)
+        solid transparent;
+
+    border-right:
+        calc(min(84vw,440px) / 2)
+        solid transparent;
+
+    border-top:
+        calc(min(55vw,280px) * .48)
+        solid #1591a2;
+
+    transform-origin:top;
+
+    transition:
+        transform 1s
+        cubic-bezier(.2,.8,.2,1);
+
+    z-index:10;
+}
+
+.envelope.open .flap{
+
+    transform:
+        rotateX(180deg);
+
+    z-index:2;
+}
+
+.seal{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:62px;
+    height:62px;
+
+    display:grid;
+    place-items:center;
+
+    border:
+        1px solid
+        #9afcff;
+
+    border-radius:50%;
+
+    background:
+        #05202c;
+
+    color:#e8ffff;
+
+    font-size:27px;
+
+    box-shadow:
+        0 0 30px
+        rgba(64,239,239,.5),
+
+        inset 0 0 15px
+        rgba(95,255,255,.18);
+
+    z-index:20;
+
+    transition:
+        opacity .5s,
+        transform .5s;
+}
+
+.envelope.open .seal{
+
+    opacity:0;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.2);
+}
+
+.envelopeTitle{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:58px;
+
+    padding:0 12px;
+
+    color:#eaffff;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+
+    z-index:8;
+}
+
+.envelopeTap{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:21px;
+
+    color:#7ff2f1;
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    z-index:8;
+}
+
+.openHint{
+
+    margin-top:24px;
+
+    color:#78a9b7;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   LETTER POPUP
+========================================================= */
+
+#letter{
+
+    position:fixed;
+
+    left:50%;
+    top:50%;
+
+    width:min(92vw,680px);
+
+    height:min(78vh,690px);
+
+    padding:30px;
+
+    overflow-y:auto;
+
+    transform:
+        translate(-50%,-42%)
+        scale(.72);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:10000;
+
+    border:
+        2px solid
+        #4ccbd2;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(247,255,255,.99),
+            rgba(220,249,250,.99)
+        );
+
+    color:#173947;
+
+    box-shadow:
+        0 35px 100px
+        rgba(0,0,0,.7),
+
+        0 0 60px
+        rgba(53,222,230,.22);
+
+    transition:
+        transform 1s
+        cubic-bezier(.2,.8,.2,1),
+
+        opacity 1s ease;
+}
+
+#letter.show{
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+#letter h2{
+
+    margin:0;
+
+    text-align:center;
+
+    color:#087e94;
+
+    font-size:22px;
+}
+
+.letterSubtitle{
+
+    margin:
+        6px 0 23px;
+
+    text-align:center;
+
+    color:#63909a;
+
+    font-size:11px;
+}
+
+.letterText{
+
+    font-size:14px;
+
+    line-height:1.75;
+}
+
+.letterText p{
+
+    margin:
+        0 0 16px;
+}
+
+.letterText strong{
+
+    color:#075e73;
+}
+
+.signature{
+
+    margin-top:25px;
+
+    text-align:right;
+
+    color:#167c91;
+
+    font-weight:700;
+}
+
+#unboxButton{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:16px;
+
+    border:
+        1px dashed
+        #36b7c0;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c7f8f6,
+            #efffff
+        );
+
+    color:#075d70;
+
+    font-weight:900;
+
+    box-shadow:
+        0 8px 20px
+        rgba(25,150,165,.15);
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
+}
+
+#unboxButton:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(25,180,195,.25);
+}
+
+#letterEgg{
+
+    margin-top:18px;
+
+    text-align:center;
+
+    color:#7ab7bf;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:
+        transform .3s,
+        color .3s;
+}
+
+#letterEgg:hover{
+
+    transform:
+        scale(1.5)
+        rotate(90deg);
+
+    color:#21bfc8;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+#gallery{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    z-index:20000;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #087e99,
+            #06384f 52%,
+            #02121f 100%
+        );
+
+    opacity:0;
+
+    transition:
+        opacity 1s ease;
+}
+
+#gallery.visible{
+    display:block;
+}
+
+#gallery.fadeIn{
+    opacity:1;
+}
+
+.galleryAura{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(74,239,238,.24),
+            transparent 38%
+        );
+}
+
+.galleryAura::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:45vw;
+    height:45vw;
+
+    max-width:600px;
+    max-height:600px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border:
+        1px solid
+        rgba(113,244,240,.24);
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 90px
+        rgba(40,221,227,.13);
+
+    animation:
+        auraRotate 16s linear infinite;
+}
+
+@keyframes auraRotate{
+
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(360deg);
+    }
+}
+
+.galleryContent{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        45px 15px 25px;
+
+    z-index:2;
+}
+
+.galleryCounter{
+
+    margin-bottom:12px;
+
+    color:#7cf5ee;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 0 12px
+        rgba(81,244,236,.5);
+}
+
+#galleryImage{
+
+    display:block;
+
+    max-width:min(94vw,1100px);
+
+    max-height:66vh;
+
+    object-fit:contain;
+
+    border-radius:14px;
+
+    border:
+        2px solid
+        rgba(133,249,240,.55);
+
+    box-shadow:
+        0 25px 90px
+        rgba(0,0,0,.7),
+
+        0 0 45px
+        rgba(44,225,226,.2);
+
+    animation:
+        imageAppear .8s ease;
+
+    transition:
+        filter .8s,
+        box-shadow .8s;
+}
+
+@keyframes imageAppear{
+
+    from{
+        opacity:0;
+
+        transform:
+            scale(.94)
+            translateY(18px);
+
+        filter:blur(7px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+        filter:blur(0);
+    }
+}
+
+#galleryCaption{
+
+    width:min(90vw,760px);
+
+    min-height:52px;
+
+    margin-top:15px;
+
+    text-align:center;
+
+    color:#d8ffff;
+
+    font-size:14px;
+
+    line-height:1.55;
+
+    animation:
+        captionAppear .8s ease;
+}
+
+@keyframes captionAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.galleryButtons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:14px;
+}
+
+.galleryButton{
+
+    padding:
+        10px 18px;
+
+    border-radius:999px;
+
+    border:
+        1px solid
+        #4db8c1;
+
+    background:
+        rgba(3,29,42,.9);
+
+    color:#e0ffff;
+
+    transition:
+        transform .2s,
+        box-shadow .2s;
+}
+
+.galleryButton:hover{
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 0 20px
+        rgba(71,233,226,.3);
+}
+
+.galleryButton.main{
+
+    border:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7cf5ed,
+            #28bfc8,
+            #178bb2
+        );
+
+    color:#03202b;
+
+    font-weight:900;
+}
+
+#finalMessage{
+
+    position:absolute;
+
+    bottom:18px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        9px 17px;
+
+    white-space:nowrap;
+
+    border:
+        1px solid
+        rgba(116,239,232,.35);
+
+    border-radius:999px;
+
+    background:
+        rgba(2,20,29,.78);
+
+    color:#e4ffff;
+
+    font-size:11px;
+
+    opacity:0;
+
+    transition:
+        opacity 1s;
+
+    z-index:5;
+}
+
+#finalMessage.show{
+    opacity:1;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+#toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:25px;
+
+    transform:
+        translate(-50%,35px);
+
+    opacity:0;
+
+    z-index:100001;
+
+    padding:
+        12px 20px;
+
+    border:
+        1px solid
+        rgba(108,238,232,.4);
+
+    border-radius:999px;
+
+    background:
+        rgba(2,20,30,.95);
+
+    color:#e1ffff;
+
+    font-size:12px;
+
+    transition:.4s;
+
+    pointer-events:none;
+}
+
+#toast.show{
+
+    opacity:1;
+
+    transform:
+        translate(-50%,0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    #letter{
+
+        width:92vw;
+
+        height:76vh;
+
+        padding:22px;
+    }
+
+    .letterText{
+
+        font-size:13px;
+    }
+
+    #galleryImage{
+
+        max-height:58vh;
+
+        max-width:94vw;
+    }
+
+    #galleryCaption{
+
+        font-size:12px;
+    }
+
+    #envelopeTitle{
+
+        font-size:21px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     AMBIENT EFFECTS
+===================================================== -->
+
+<div id="ambient">
+
+    <div class="aquaGlow glowOne"></div>
+    <div class="aquaGlow glowTwo"></div>
+
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+
+    <div class="pixel p1"></div>
+    <div class="pixel p2"></div>
+    <div class="pixel p3"></div>
+
+    <div class="skirk s1"></div>
+    <div class="skirk s2"></div>
+    <div class="skirk s3"></div>
+
+</div>
+
+
+<!-- =====================================================
+     LOCK SCREEN
+===================================================== -->
+
+<div id="lockScreen">
+
+    <div class="lockCard">
+
+        <div class="lockSymbol">
+            ✦
+        </div>
+
+        <h1>
+            A Little Surprise
+        </h1>
+
+        <p>
+            This birthday message is only for Dusk. 🌊
+        </p>
+
+        <input
+            id="password"
+            type="password"
+            maxlength="4"
+            inputmode="numeric"
+            placeholder="ENTER CODE"
+        >
+
+        <button id="unlockButton">
+            UNLOCK ✦
+        </button>
+
+        <div id="error"></div>
+
+        <p style="color:#6793a1;font-size:10px;">
+            You might wanna remember a certain four-digit number... 🤫
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     APP
+===================================================== -->
+
+<div id="app">
+
+
+    <!-- TOP BUTTONS -->
+
+    <button id="infoButton">
+        ✦
+    </button>
+
+    <button id="musicButton">
+        🎵
+    </button>
+
+    <div id="musicLabel">
+        MUSIC READY
+    </div>
+
+
+    <div id="infoPanel">
+
+        <h3>
+            ✦ Birthday Edition
+        </h3>
+
+        <p>
+            🌊 Mualani-inspired atmosphere
+        </p>
+
+        <p>
+            🟢 Tiny Kinich touches
+        </p>
+
+        <p>
+            🟣 A little Skirk chaos
+        </p>
+
+        <p>
+            💎 Birthday memory gallery
+        </p>
+
+        <p>
+            🎵 One continuous birthday song
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         ENVELOPE
+    ================================================== -->
+
+    <div id="mainScene">
+
+        <section id="envelopeSection">
+
+            <div class="kicker">
+                SOMETHING SPECIAL IS WAITING…
+            </div>
+
+            <h2 id="envelopeTitle">
+                OPEN IT, DUSK. 💌
+            </h2>
+
+            <p id="envelopeSubtitle">
+                There's a little birthday surprise inside.
+            </p>
+
+
+            <div
+                class="envelope"
+                id="envelope"
+            >
+
+                <div class="envelopeGlow"></div>
+
+                <div class="envelopeBody"></div>
+
+                <div class="flap"></div>
+
+                <div class="seal">
+                    🌊
+                </div>
+
+                <div class="envelopeTitle">
+                    HAPPY BIRTHDAY, DUSK ✦
+                </div>
+
+                <div class="envelopeTap">
+                    TAP THE ENVELOPE
+                </div>
+
+            </div>
+
+
+            <div class="openHint">
+                ✦ there's something waiting for you ✦
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =================================================
+         LETTER
+    ================================================== -->
+
+    <section id="letter">
+
+        <h2>
+            💌 Happy Birthday, Dusk! 🎂✨
+        </h2>
+
+        <div class="letterSubtitle">
+            A little birthday letter, just for you.
+        </div>
+
+
+        <div class="letterText">
+
+            <p>
+                <strong>
+                    Happy Birthday, Dusk!! 🎉
+                </strong>
+            </p>
+
+            <p>
+                First of all, I hope you have an amazing birthday and that you get to spend it doing whatever makes you happiest. You deserve a really good day, so enjoy it properly.
+            </p>
+
+            <p>
+                Now, I genuinely have to mention your Genshin building skills because bro… HOW do you know this much about builds?? 💀 You can probably look at a character, their weapon, their artifacts and somehow immediately know what needs changing. Meanwhile, some of us are just sitting there staring at an artifact like, “Hmm… this looks good enough.” 😭 You are actually way too good at building characters, and the amount of knowledge you have about teams, stats and everything else is honestly crazy. If I ever completely ruin a character's build, I already know who I'm coming to. 💀
+            </p>
+
+            <p>
+                And then we have your other special talent: communicating without actually communicating. 😭 There are times when you just… don't speak. No explanation. No words. Nothing. Just a GIF. Another GIF. Maybe another one. At some point I'm not even sure if I'm talking to Dusk anymore or if I've accidentally opened a GIF museum. 💀 But honestly, I've gotten used to it at this point. If you ever send me a normal full sentence, I'll probably be more shocked than anything else. 😭
+            </p>
+
+            <p>
+                But jokes aside, I'm genuinely glad that we became friends. You've been a really fun person to know, and I'm happy that we've had all these random conversations, Genshin moments, and completely unnecessary chaos along the way. Even when you're silently communicating through GIFs, you're still someone I'm really glad I got to meet.
+            </p>
+
+            <p>
+                I hope this next year brings you a lot of good memories, good people, good luck, and plenty of reasons to be happy. I hope you get to achieve the things you're working toward and have a future that turns out even better than you expect. And obviously, I hope your Genshin characters continue being ridiculously well-built because at this point that's basically part of your identity. 😭
+            </p>
+
+            <p>
+                So yeah, happy birthday again, Dusk!! 🥳
+                Have an amazing day, enjoy yourself, and don't forget to actually speak at least once instead of replying with a GIF. 💀
+            </p>
+
+            <p>
+                Here's to another year of being insane at Genshin, being obsessed with fictional characters, and somehow communicating entirely through gifs.😭
+            </p>
+
+
+            <div class="signature">
+                Happy Birthday, Dusk! 🎂🥳
+                <br>
+                — Akane ✨
+            </div>
+
+
+            <button id="unboxButton">
+                💎 TAP TO UNBOX THE BIRTHDAY SURPRISE 💎
+            </button>
+
+
+            <div id="letterEgg">
+                ✦
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         GALLERY
+    ================================================== -->
+
+    <section id="gallery">
+
+        <div class="galleryAura"></div>
+
+        <div class="galleryContent">
+
+            <div
+                class="galleryCounter"
+                id="galleryCounter"
+            >
+                MEMORY 01 / 02
+            </div>
+
+
+            <img
+                id="galleryImage"
+                src="dusk-memory.jpg"
+                alt="Birthday memory"
+            >
+
+
+            <div id="galleryCaption">
+
+                A rare piece of evidence that we actually
+                exist in the same screenshot. 😭
+
+            </div>
+
+
+            <div class="galleryButtons">
+
+                <button
+                    class="galleryButton"
+                    id="prevButton"
+                >
+                    ← Previous
+                </button>
+
+                <button
+                    class="galleryButton main"
+                    id="nextButton"
+                >
+                    Next Memory →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div id="finalMessage">
+            Happy Birthday, Dusk. 🌊💙
+        </div>
+
+    </section>
+
+
+    <!-- TOAST -->
+
+    <div id="toast"></div>
+
+
+</div>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio
+    id="birthdayAudio"
+    src="hikarunara.mp3"
+    preload="auto"
+    loop
+></audio>
+
+
+<script>
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const lockScreen =
+    document.getElementById("lockScreen");
+
+const password =
+    document.getElementById("password");
+
+const unlockButton =
+    document.getElementById("unlockButton");
+
+const error =
+    document.getElementById("error");
+
+const envelope =
+    document.getElementById("envelope");
+
+const letter =
+    document.getElementById("letter");
+
+const unboxButton =
+    document.getElementById("unboxButton");
+
+const gallery =
+    document.getElementById("gallery");
+
+const galleryImage =
+    document.getElementById("galleryImage");
+
+const galleryCaption =
+    document.getElementById("galleryCaption");
+
+const galleryCounter =
+    document.getElementById("galleryCounter");
+
+const nextButton =
+    document.getElementById("nextButton");
+
+const prevButton =
+    document.getElementById("prevButton");
+
+const birthdayAudio =
+    document.getElementById("birthdayAudio");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+const musicLabel =
+    document.getElementById("musicLabel");
+
+const infoButton =
+    document.getElementById("infoButton");
+
+const infoPanel =
+    document.getElementById("infoPanel");
+
+const finalMessage =
+    document.getElementById("finalMessage");
+
+
+let unlocked = false;
+
+let envelopeOpened = false;
+
+let currentMemory = 0;
+
+
+/* =========================================================
+   MEMORY GALLERY
+========================================================= */
+
+const memories = [
+
+    {
+        image:
+            "dusk-memory.jpg",
+
+        caption:
+            "A rare piece of evidence that we actually exist in the same screenshot. 😭"
+    },
+
+    {
+        image:
+            "dusk-birthday.png",
+
+        caption:
+            "Mualani and Kinich have officially arrived to wish you a very Happy Birthday. 🌊💚✨"
+    }
+
+];
+
+
+/* =========================================================
+   CREATE WATER DROPS
+========================================================= */
+
+function createWaterDrops(amount){
+
+    const ambient =
+        document.getElementById("ambient");
+
+    for(let i=0;i<amount;i++){
+
+        const drop =
+            document.createElement("div");
+
+        drop.className =
+            "waterDrop";
+
+        drop.style.left =
+            Math.random()*100 + "%";
+
+        drop.style.animationDuration =
+            (5 + Math.random()*7) + "s";
+
+        drop.style.animationDelay =
+            Math.random()*7 + "s";
+
+        ambient.appendChild(drop);
+
+    }
+}
+
+createWaterDrops(24);
+
+
+/* =========================================================
+   CLICK EFFECT
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        const ripple =
+            document.createElement("div");
+
+        ripple.className =
+            "ripple";
+
+        ripple.style.left =
+            event.clientX + "px";
+
+        ripple.style.top =
+            event.clientY + "px";
+
+        document.body.appendChild(ripple);
+
+        setTimeout(
+            ()=>ripple.remove(),
+            1000
+        );
+
+
+        if(
+            event.target.closest(
+                "#envelope"
+            ) ||
+            event.target.closest(
+                "#unboxButton"
+            ) ||
+            event.target.closest(
+                ".galleryButton"
+            )
+        ){
+
+            createStars(
+                event.clientX,
+                event.clientY,
+                10
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   STAR BURST
+========================================================= */
+
+function createStars(
+    x,
+    y,
+    amount
+){
+
+    for(let i=0;i<amount;i++){
+
+        const star =
+            document.createElement("div");
+
+        star.className =
+            "star";
+
+        star.textContent =
+            Math.random() > .5
+            ? "✦"
+            : "✧";
+
+        star.style.left =
+            x + "px";
+
+        star.style.top =
+            y + "px";
+
+        star.style.setProperty(
+            "--dx",
+            (Math.random()*180-90)+"px"
+        );
+
+        star.style.setProperty(
+            "--dy",
+            (Math.random()*180-90)+"px"
+        );
+
+        document.body.appendChild(star);
+
+        setTimeout(
+            ()=>star.remove(),
+            1300
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   UNLOCK
+========================================================= */
+
+function checkPassword(){
+
+    if(password.value !== "2810"){
+
+        error.textContent =
+            "Wrong code. Try again. 🤫";
+
+        password.value = "";
+
+        const card =
+            document.querySelector(
+                ".lockCard"
+            );
+
+        card.animate(
+            [
+                {
+                    transform:
+                        "translateX(-7px)"
+                },
+                {
+                    transform:
+                        "translateX(7px)"
+                },
+                {
+                    transform:
+                        "translateX(-5px)"
+                },
+                {
+                    transform:
+                        "translateX(0)"
+                }
+            ],
+            {
+                duration:350
+            }
+        );
+
+        return;
+
+    }
+
+
+    unlocked = true;
+
+    error.textContent = "";
+
+
+    /* BIG UNLOCK BURST */
+
+    createStars(
+        window.innerWidth/2,
+        window.innerHeight/2,
+        35
+    );
+
+
+    /* MUSIC STARTS HERE */
+
+    birthdayAudio.currentTime = 0;
+
+    birthdayAudio.volume = .9;
+
+    birthdayAudio
+        .play()
+        .then(()=>{
+
+            musicLabel.textContent =
+                "MUSIC PLAYING";
+
+        })
+        .catch(()=>{
+
+            musicLabel.textContent =
+                "MUSIC READY";
+
+        });
+
+
+    lockScreen.style.opacity =
+        "0";
+
+    lockScreen.style.visibility =
+        "hidden";
+
+
+    setTimeout(()=>{
+
+        lockScreen.remove();
+
+    },900);
+
+}
+
+
+unlockButton.addEventListener(
+    "click",
+    checkPassword
+);
+
+
+password.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            checkPassword();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+envelope.addEventListener(
+    "click",
+    function(){
+
+        if(
+            !unlocked ||
+            envelopeOpened
+        ){
+
+            return;
+
+        }
+
+        envelopeOpened = true;
+
+        envelope.classList.add(
+            "open"
+        );
+
+
+        createStars(
+            window.innerWidth/2,
+            window.innerHeight/2,
+            25
+        );
+
+
+        createWaterDrops(12);
+
+
+        setTimeout(()=>{
+
+            letter.classList.add(
+                "show"
+            );
+
+        },650);
+
+    }
+);
+
+
+/* =========================================================
+   UNBOX
+========================================================= */
+
+unboxButton.addEventListener(
+    "click",
+    function(){
+
+        unboxButton.disabled =
+            true;
+
+        createStars(
+            window.innerWidth/2,
+            window.innerHeight/2,
+            35
+        );
+
+
+        setTimeout(()=>{
+
+            letter.classList.remove(
+                "show"
+            );
+
+        },250);
+
+
+        setTimeout(()=>{
+
+            gallery.classList.add(
+                "visible"
+            );
+
+            requestAnimationFrame(
+                ()=>{
+
+                    gallery.classList.add(
+                        "fadeIn"
+                    );
+
+                }
+            );
+
+            currentMemory = 0;
+
+            updateGallery();
+
+        },900);
+
+    }
+);
+
+
+/* =========================================================
+   GALLERY UPDATE
+========================================================= */
+
+function updateGallery(){
+
+    const memory =
+        memories[currentMemory];
+
+
+    galleryImage.style.animation =
+        "none";
+
+    void galleryImage.offsetWidth;
+
+    galleryImage.style.animation =
+        "imageAppear .8s ease";
+
+
+    galleryImage.src =
+        memory.image;
+
+    galleryCaption.textContent =
+        memory.caption;
+
+
+    galleryCounter.textContent =
+        "MEMORY " +
+        String(currentMemory + 1).padStart(2,"0") +
+        " / " +
+        String(memories.length).padStart(2,"0");
+
+
+    prevButton.disabled =
+        currentMemory === 0;
+
+
+    if(
+        currentMemory ===
+        memories.length - 1
+    ){
+
+        nextButton.textContent =
+            "Birthday Finale ✦";
+
+    }else{
+
+        nextButton.textContent =
+            "Next Memory →";
+
+    }
+
+}
+
+
+/* =========================================================
+   NEXT
+========================================================= */
+
+nextButton.addEventListener(
+    "click",
+    function(){
+
+        if(
+            currentMemory <
+            memories.length - 1
+        ){
+
+            currentMemory++;
+
+            updateGallery();
+
+            createStars(
+                window.innerWidth/2,
+                window.innerHeight/2,
+                14
+            );
+
+            return;
+
+        }
+
+
+        /* FINAL CLICK */
+
+        finalMessage.classList.add(
+            "show"
+        );
+
+        createStars(
+            window.innerWidth/2,
+            window.innerHeight/2,
+            40
+        );
+
+        musicLabel.textContent =
+            "🎵 FOR DUSK";
+
+    }
+);
+
+
+/* =========================================================
+   PREVIOUS
+========================================================= */
+
+prevButton.addEventListener(
+    "click",
+    function(){
+
+        if(currentMemory > 0){
+
+            currentMemory--;
+
+            updateGallery();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+musicButton.addEventListener(
+    "click",
+    function(){
+
+        if(
+            birthdayAudio.paused
+        ){
+
+            birthdayAudio.play();
+
+            musicLabel.textContent =
+                "MUSIC PLAYING";
+
+        }else{
+
+            birthdayAudio.pause();
+
+            musicLabel.textContent =
+                "MUSIC PAUSED";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+infoButton.addEventListener(
+    "click",
+    function(){
+
+        infoPanel.classList.toggle(
+            "show"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   LITTLE SECRET
+========================================================= */
+
+document
+    .getElementById("letterEgg")
+    .addEventListener(
+        "click",
+        function(){
+
+            showToast(
+                "You found the unnecessary little secret. ✦"
+            );
+
+            createStars(
+                window.innerWidth/2,
+                window.innerHeight/2,
+                15
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+    toast.textContent =
+        message;
+
+    toast.classList.add(
+        "show"
+    );
+
+    setTimeout(()=>{
+
+        toast.classList.remove(
+            "show"
+        );
+
+    },3000);
+
+}
+
+</script>
+
+</body>
+</html>
